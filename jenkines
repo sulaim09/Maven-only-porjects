@@ -1,0 +1,24 @@
+# Maven-only-porjects
+pipeline {
+    agent any
+     tools { 
+        maven 'Maven' 
+    }
+    stages {
+        stage('Test'){
+            steps{
+                // mvn test
+                sh "mvn test"
+                echo 'Hello World'
+            }
+            
+        }  
+        stage('Build'){
+            steps {
+                // mvn package
+                sh "mvn package"
+                echo 'Hello World'
+            }
+            
+        }
+   }
